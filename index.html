@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Assistant Platform</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Travel Assistant</h1>
+        <p>Plan trips, discover destinations, and track your travel life.</p>
+      </div>
+      <div id="auth-status" class="auth-status">Not logged in</div>
+    </header>
+
+    <main class="layout">
+      <section class="card" id="auth-card">
+        <h2>Login / Profile</h2>
+        <form id="auth-form" class="stack">
+          <label>
+            Name
+            <input required type="text" id="name" placeholder="Alex Traveler" />
+          </label>
+          <label>
+            Email
+            <input required type="email" id="email" placeholder="alex@example.com" />
+          </label>
+          <label>
+            Home City
+            <input type="text" id="homeCity" placeholder="New York" />
+          </label>
+          <button type="submit">Save Profile</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Trip Planner</h2>
+        <form id="trip-form" class="grid-form">
+          <label>
+            Destination
+            <input required id="destination" type="text" placeholder="Tokyo" />
+          </label>
+          <label>
+            Start Date
+            <input required id="startDate" type="date" />
+          </label>
+          <label>
+            End Date
+            <input required id="endDate" type="date" />
+          </label>
+          <label>
+            Budget (USD)
+            <input required id="budget" type="number" min="100" step="50" value="1500" />
+          </label>
+          <label>
+            Travelers
+            <input required id="travelers" type="number" min="1" value="1" />
+          </label>
+          <label>
+            Interests
+            <input id="interests" type="text" placeholder="food, museums, hiking" />
+          </label>
+          <label class="full-width">
+            Notes
+            <textarea id="notes" rows="3" placeholder="Must-do items"></textarea>
+          </label>
+          <button class="full-width" type="submit">Create Itinerary</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Transport Finder</h2>
+        <form id="transport-form" class="grid-form">
+          <label>
+            From
+            <input required id="transportFrom" type="text" placeholder="Delhi" />
+          </label>
+          <label>
+            To
+            <input required id="transportTo" type="text" placeholder="Manali" />
+          </label>
+          <label>
+            Date
+            <input required id="transportDate" type="date" />
+          </label>
+          <label>
+            Mode
+            <select id="transportMode">
+              <option>Flights</option>
+              <option>Trains</option>
+              <option>Buses</option>
+            </select>
+          </label>
+          <button class="full-width" type="submit">Search Options</button>
+        </form>
+        <ul id="transport-results" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Saved Trips</h2>
+        <div id="saved-trips" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Trip Analytics</h2>
+        <div class="analytics-grid">
+          <div>
+            <h3>Total Trips</h3>
+            <p id="metric-total">0</p>
+          </div>
+          <div>
+            <h3>Total Budget</h3>
+            <p id="metric-budget">$0</p>
+          </div>
+          <div>
+            <h3>Countries Planned</h3>
+            <p id="metric-countries">0</p>
+          </div>
+          <div>
+            <h3>Top Destination</h3>
+            <p id="metric-top">-</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Community Board</h2>
+        <form id="community-form" class="stack">
+          <label>
+            Share a tip or itinerary idea
+            <textarea id="communityPost" rows="3" required placeholder="Best street food route in Bangkok..."></textarea>
+          </label>
+          <button type="submit">Post to Community</button>
+        </form>
+        <div id="community-feed" class="list"></div>
+      </section>
+    </main>
+  </body>
+</html>
