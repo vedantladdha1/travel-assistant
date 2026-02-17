@@ -1,0 +1,141 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f7fb;
+  color: #1b2533;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.topbar {
+  background: linear-gradient(120deg, #315bf5, #42b5ff);
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.topbar h1 {
+  margin: 0;
+}
+
+.topbar p {
+  margin: 0.5rem 0 0;
+}
+
+.auth-status {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.layout {
+  padding: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 22px rgba(23, 42, 79, 0.08);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.stack,
+.grid-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.grid-form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  font: inherit;
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #c8d4e3;
+}
+
+button {
+  border: none;
+  background: #315bf5;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2149d6;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.list-item {
+  border: 1px solid #e3ebf4;
+  border-radius: 10px;
+  padding: 0.75rem;
+  background: #fbfdff;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.analytics-grid h3 {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #5f7086;
+}
+
+.analytics-grid p {
+  margin: 0.4rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .grid-form,
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+}
